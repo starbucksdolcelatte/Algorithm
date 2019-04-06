@@ -59,7 +59,7 @@ def is_vps(vps_str):
         if(p == '('):
             s.append(p)
         else:
-            if not s: # s is isEmpty
+            if not s: # s is Empty
                 print("NO")
                 return
             s.pop()
