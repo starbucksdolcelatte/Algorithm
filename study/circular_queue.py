@@ -32,17 +32,41 @@ N은 50보다 작거나 같은 자연수이고, M은 N보다 작거나 같은 �
 첫째 줄에 문제의 정답을 출력한다.
 '''
 
-#get_input = input()
-get_input = '10 3'
+get_input = input()
+#get_input = '10 10'
 get_input = get_input.split(' ')
 len = int(get_input[0])
 num = int(get_input[1])
 
-#get_input = input()
-get_input = '1 2 3'
+get_input = input()
+#get_input = '1 6 3 2 7 9 8 4 10 5'
 get_input = get_input.split(' ')
 pick = [int(x) for x in get_input]
 
-def dequeue()
-def second()
-def third()
+
+half = 0
+count = 0 # num of second, third operation call
+while pick: #until list is empty
+    if (pick[0] == 1): # dequeue
+        pick.remove(pick[0])
+        len -= 1
+        if pick: # q is not empty
+            pick = [x-1 for x in pick]
+            pick = [x+len if (x == 0) else x for x in pick]
+
+    else:
+        half = len/2
+        left = pick[0] - 1
+        right = len - pick[0] + 1
+        if (left <= right): # 2번째 연산
+            pick = [x-left for x in pick]
+            pick = [x+len if (x <= 0) else x for x in pick]
+            count += left
+
+        else: # 3번째 연산
+            pick = [x+right for x in pick]
+            pick = [x-len if (x > len) else x for x in pick]
+            count += right
+
+
+print(count)
