@@ -43,6 +43,9 @@ for n in sorted(self_num_set):
 set 의 개념 : 중복된 것은 제외한다.
 sorted(list) 를 이용해 순서대로 출력되도록 한다.
 
+생성자가 있는 숫자들을 반복문을 통해 구해서 set에 넣어준 후,
+1부터 10000까지의 수가 있는 리스트에서 set을 빼준다.
+
 # sort vs sorted
     - sorted 는 정렬된 새로운 리스트를 리턴
         sorted(list) # 결과값으로 list의 원소가 정렬된 새 리스트 리턴
