@@ -30,12 +30,22 @@ generated_num_set = set([])
 self_num_set = []
 
 for i in range(1,100):
-    print(i)
     for j in str(i):
         i += int(j)
     generated_num_set.add(i)
 
 self_num_set = natural_num_set - generated_num_set
 
-for n in self_num_set:
+for n in sorted(self_num_set):
     print(n)
+
+'''
+set 의 개념 : 중복된 것은 제외한다.
+sorted(list) 를 이용해 순서대로 출력되도록 한다.
+
+# sort vs sorted
+    - sorted 는 정렬된 새로운 리스트를 리턴
+        sorted(list) # 결과값으로 list의 원소가 정렬된 새 리스트 리턴
+    - sort 는 아무 것도 리턴하지 않음. None 리턴. 리스트 자체를 정렬한다.
+        list.sort() # list의 원소가 정렬됨. 리턴 값 없음.
+'''
