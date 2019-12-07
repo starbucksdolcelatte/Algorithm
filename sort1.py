@@ -1,4 +1,5 @@
 '''
+selection sort, bubble sort, insertion sort 파이썬으로 구현해보기
 # 문제
 N개의 수가 주어졌을 때, 이를 오름차순으로 정렬하는 프로그램을 작성하시오.
 
@@ -14,14 +15,10 @@ N개의 수가 주어졌을 때, 이를 오름차순으로 정렬하는 프로�
 MIN = -1000
 
 # input
-'''
 n = int(input())
 nums = []
 for _ in range(n):
     nums.append(int(input()))
-'''
-n = 5
-nums = [10, -5, 2, -10, 1]
 
 # 1. selection sort
 def selection_sort(n, nums):
@@ -53,7 +50,6 @@ def bubble_sort(n, nums):
 
 # 3. insertion sort
 def insertion_sort(n, nums):
-    #nums = [10, -5, 2, -10, 1]
     ret = [0 for _ in range(len(nums))]
     # sort the head 2 items
     if nums[0] > nums[1]:
@@ -78,4 +74,8 @@ def insertion_sort(n, nums):
         nums[:i+1] = ret[:i+1]
     return ret
 
-print(insertion_sort(n,nums))
+# ret = insertion_sort(n,nums):
+# ret = in bubble_sort(n,nums):
+ret = selection_sort(n,nums)
+for x in ret:
+    print(x)
