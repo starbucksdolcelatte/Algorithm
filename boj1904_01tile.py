@@ -27,13 +27,10 @@
 
 MOD = 15746
 def tile(N):
-    n_1 = 2 #n-1번째 수열의 원소 개수
-    n_2 = 1 #n-2번째 수열의 원소 개수
+    l = [1,2]
     for i in range(2, N):
-        tmp = n_1 + n_2 # 피보나치 : n-1번째 뒤에 1을 붙이거나 n-2번째 뒤에 0을 붙이거나
-        n_2 = n_1
-        n_1 = tmp
-    return n_1%MOD
+        l.append((l[i-1]+l[i-2])%MOD)
+    return l[-1]
 
 N = int(input())
 print(tile(N))
