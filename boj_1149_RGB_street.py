@@ -17,7 +17,16 @@ RGB거리에 사는 사람들은 집을 빨강, 초록, 파랑중에 하나로 �
 첫째 줄에 모든 집을 칠하는 비용의 최솟값을 출력한다.
 '''
 N = int(input())
-l = list()
+RGB = list()
 for i in range(N):
-    l.append([int(n) for n in input().split()])
+    RGB.append([int(n) for n in input().split()])
 #print(l)
+cost = [[0,0,0] for _ in range(N)]
+
+cost[0] = RGB[0]
+for i in range(1,N):
+    cost[i][0] = min(cost[i-1][1], cost[i-1][2]) + RGB[i][0]
+    cost[i][1] = min(cost[i-1][0], cost[i-1][2]) + RGB[i][1]
+    cost[i][2] = min(cost[i-1][0], cost[i-1][1]) + RGB[i][2]
+
+print(min(cost[N-1][0], cost[N-1][1], cost[N-1][2]))
